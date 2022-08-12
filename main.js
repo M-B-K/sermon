@@ -72,15 +72,34 @@ function getsurah(){
     fetch(apiUrl).then(response => response.json()).then(data => {
         let surahs = data.data.surahs.references;
         let count = data.data.surahs.count
-        console.log(count)
         for (let index = 0; index < count; index++) {
             surahscontnieer.innerHTML += `
             <div class="surah">
                 <p>${surahs[index].name}</p>
                 <p>${surahs[index].englishName}</p>
             </div>
-            `
-            
+            `;            
         }
+        let surahtitle = document.querySelectorAll(".surah");
+        let popup = document.querySelector(".popup");
+        let ayatcontnieer = document.querySelector(".ayat")
+        let headername = document.querySelector(".popup .close");
+        surahtitle.forEach((title, index)=>{
+            title.addEventListener("click",()=>{
+                fetch(`http://api.alquran.cloud/v1/surah/${index + 1}`).then(response => response.json()).then(data => {
+                    ayatcontnieer.innerHTML = "";
+                    let ayatts =data.data.ayahs;
+                    ayatts.forEach(ayatt=>{
+                        popup.classList.add("active");
+                        ayatcontnieer.innerHTML += `
+                        <span>${ayatt.text} {${ayatt.numberInSurah}} </span>
+                        `
+                        headername.innerHTML = `
+                        <p>${data.data.name}</p>
+                        <i class="fas fa-times"></i>`
+                    })
+                })
+            })
+        })
     })
 }

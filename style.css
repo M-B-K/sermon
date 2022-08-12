@@ -4,18 +4,14 @@
     box-sizing: border-box;
     font-family: "cairo-bold";
     outline: none;
-
 }
-
 body{
     direction: rtl;
     scroll-behavior: smooth;
 }
-
 ul li{
     list-style: none;
 }
-
 .contnieer{
     max-width: 1450px;
     width: 100%;
@@ -23,10 +19,11 @@ ul li{
     position: relative;
     padding: 0 20px;
 }
+
+/* section style */
 section{
     padding: 80px 0 ;
 }
-
 section h3{
     font-size: 30px;
     text-align: center;
@@ -34,7 +31,6 @@ section h3{
     position: relative;
 
 }
-
 section h3::before,
 section h3::after{
     content: "";
@@ -45,13 +41,20 @@ section h3::after{
     width: 100px;
     height: 2px;
     background-color: #43a047;
+    transition: 0.5s all ease-in-out;
 }
-
 section h3::after{
     width: 50px;
     bottom: -12px;
 }
-/* header */
+section h3:hover::before{
+    width: 50px;
+}
+section h3:hover::after{
+    width: 0px;
+}
+
+/* header style*/
 .header{
     position: fixed;
     top: 0;
@@ -60,7 +63,6 @@ section h3::after{
     transition: 0.5s all ease-in-out;
     z-index: 1;
 }
-
 .header .contnieer{
     display: flex;
     justify-content: space-between;
@@ -69,30 +71,24 @@ section h3::after{
     transition: 0.5s all ease-in-out;
     color: white;
 }
-
 .header.active{
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 .header.active .contnieer{
     height: 80px;
 }
-
 .header .logo{
     font-family: "thuluth-decorated";
     font-size: 50px;
     cursor: pointer;
 }
-
 .header ul{
     display: flex;
 }
-
 .header ul li{
     position: relative;
     cursor: pointer;
 }
-
 .header ul li:after{
     content: "";
     position: absolute;
@@ -103,18 +99,15 @@ section h3::after{
     background-color: white;
     transition: 0.5s all ease-in-out;
 }
-
 .header ul li:hover:after,
 .header ul li.active:after{
     width: 100%;
 
 }
-
 .header li:not(:last-of-type),
 .header li:not(:first-of-type){
     margin: 0px 14px;
 }
-
 .header .bars{
     display: none;
 }
@@ -124,29 +117,25 @@ section h3::after{
     padding: 0;
     background: url(./imag/1.jpg) center center/cover no-repeat;
 }
-
 .main .contnieer{
     min-height: 100vh;
 }
-
 .main .contnieer .title{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: white;
 }
-
 .main .title h1{
     line-height: 1.9;
     font-size: 40px;
     margin-bottom: 30px;
 }
-
 .main .title .btn{
     outline: none;
     border: 2px solid white;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 20px;
     color: white;
     padding: 6px 14px;
@@ -157,12 +146,10 @@ section h3::after{
     position: relative;
     transition: 0.5s all ease-in-out;
 }
-
 .main .title .btn i{
     font-size: 25px;
     margin-right: 16px;
 }
-
 .title .btn::after{
     content: "";
     position: absolute;
@@ -173,13 +160,10 @@ section h3::after{
     transition: 0.5s all ease-in-out;
     z-index: -1;
     background-color: white;
-
 }
-
 .title .btn:hover{
     color: #000;
 }
-
 .title .btn:hover::after{
     width: 100%;
 }
@@ -188,8 +172,7 @@ section h3::after{
 .ahadithcontnieer{
     min-height: 350px;
     position: relative;
-    box-shadow: 2px 2px 2px 0 #d1d9e6 inset,
-    -4px -4px 2px 0 #d1d9e6 inset;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     color: #232323;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -199,15 +182,12 @@ section h3::after{
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
-
 }
-
 .ahadith .bottun{
     display: flex;
     justify-content: space-between;
     padding: 2px;
 }
-
 .ahadith .bottun div{
     background-color: #43a047;
     color: white;
@@ -216,9 +196,7 @@ section h3::after{
     cursor: pointer;
     border-radius: 6px;
 }
-
 .ahadith .bottun div.number{
-
     background-color: transparent;
     color: #43a047;
     font-weight: 700;
@@ -226,9 +204,8 @@ section h3::after{
 }
 
 /* SECTION THREE */
-
 .lectre .contnieer{
-    padding: 50px 20px;
+    padding: 50px 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -239,12 +216,6 @@ section h3::after{
     width: 47%;
 }
 
-@media (max-width:1100px) {
-    .lectre .contnieer .col1,
-    .lectre .contnieer .col2{
-    width: 100%;
-}
-}
 .lectre .contnieer .col1 .box{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     margin: 0px 0px 30px ;
@@ -255,8 +226,11 @@ section h3::after{
     align-items: center;
     transition: 0.5s all ease-in-out;
 }
+.lectre .contnieer .col1 .box:last-of-type{
+    margin: 0;
+}
 .lectre .contnieer .col1 .box:hover{
-transform: scale(0.90);
+    transform: scale(0.90);
 }
 .lectre .contnieer .col1 img{
     border-radius: 6px 0px 0px 6px;
@@ -265,8 +239,6 @@ transform: scale(0.90);
 .lectre .contnieer .col1 .text{
     margin: 10px;
 }
-
-
 .lectre .contnieer .col2{
     position: sticky;
     top: 80px;
@@ -276,30 +248,90 @@ transform: scale(0.90);
     height: 400px;
     border-radius: 6px;
 }
-
-/* section four */
-.surahcontnieer{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 40px 0;
+@media (max-width:1100px) {
+    .lectre .contnieer .col1,
+    .lectre .contnieer .col2{
+         width: 100%;
+}
+.lectre .contnieer .col1 img{
+    display: none   ;
+}
+.lectre .contnieer{
+    flex-direction: column-reverse;
+}
+.lectre .contnieer .col2{
+    position: static;
 }
 
+
+}
+/* section four */
+.surahcontnieer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(150px,auto));
+    grid-gap: 20px;
+    padding: 40px 0;
+}
 .surahcontnieer .surah{
     min-height: 150px;
     min-width: 180px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    margin: 10px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: 0.5s all ease-in-out;
-
+}
+.surahcontnieer .surah:hover{
+    transform: scale(0.90);
 }
 
-.surahcontnieer .surah:hover{
-transform: scale(0.90);
+
+
+
+/* popup */
+.popup{
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: white;
+    overflow-y: scroll;
+    transition: 0.5s all ease-in-out;
+    transform: translateY(-100%);
+}
+.popup.active{
+    transform: translateY(0);
+}
+.popup::-webkit-scrollbar{
+    display: none;
+}
+
+.popup .close{
+    background-color: rgb(67, 160, 71);
+    color: #fff;
+    width: 100%;
+    padding: 26px 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+
+}
+.popup .close i{
+    background-color: white;
+    padding: 10px 16px;
+    color: #43a047;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.popup .ayat{
+    padding:20px;
+    text-align: center;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center; */
 }
