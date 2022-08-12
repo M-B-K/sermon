@@ -251,6 +251,7 @@ section h3::after{
     border-radius: 6px;
     cursor: pointer;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     transition: 0.5s all ease-in-out;
