@@ -1,10 +1,10 @@
-// header
+// header scroll
 let fixednav = document.querySelector(".header");
 window.addEventListener("scroll",()=>{
     window.scrollY >100? fixednav.classList.add("active"): fixednav.classList.remove("active");
 })
 
-// api
+// hadith api
 let ahadithcontnieer = document.querySelector(".ahadithcontnieer");
 let next = document.querySelector(".bottun .next");
 let prev = document.querySelector(".bottun .prev");
@@ -43,20 +43,44 @@ ahadithsection.scrollIntoView({
 })
 
 
-// header btn
-// let list = document.querySelectorAll(".header .contnieer ul li")
-// for(let i = 0; i<list.length; i++){
-//     list[i].classList.remove("active")
-//     list[i].addEventListener("click",()=>{
-//         list[i].classList.add("active")
-        
-//     })
-// }
+// header link
+let sections = document.querySelectorAll("section");
+let links = document.querySelectorAll(".header ul li");
 
-// console.log(list)
-// let ahdithBtn = document.querySelector(".title .btn");
-// ahdithBtn.addEventListener('click',()=>{
-// ahadithsection.scrollIntoView({
-//     behavior: "smooth"
-// })
-// })
+links.forEach(link =>{
+    link.addEventListener("click",()=>{
+        document.querySelector(".header ul li.active").classList.remove("active");
+        link.classList.add("active");
+        let target = link.dataset.filter;
+        sections.forEach(section=>{
+            if(section.classList.contains(target)){
+                section.scrollIntoView({
+                    behavior: "smooth"
+                })
+            }
+        })
+    })
+})
+
+// http://api.alquran.cloud/v1/meta
+
+let surahscontnieer = document.querySelector(".surahcontnieer")
+getsurah();
+function getsurah(){
+    // https://www.hadithapi.com/docs/hadiths
+    const apiUrl= "http://api.alquran.cloud/v1/meta";
+    fetch(apiUrl).then(response => response.json()).then(data => {
+        let surahs = data.data.surahs.references;
+        let count = data.data.surahs.count
+        console.log(count)
+        for (let index = 0; index < count; index++) {
+            surahscontnieer.innerHTML += `
+            <div class="surah">
+                <p>${surahs[index].name}</p>
+                <p>${surahs[index].englishName}</p>
+            </div>
+            `
+            
+        }
+    })
+}
