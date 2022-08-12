@@ -82,8 +82,9 @@ function getsurah(){
         }
         let surahtitle = document.querySelectorAll(".surah");
         let popup = document.querySelector(".popup");
-        let ayatcontnieer = document.querySelector(".ayat")
-        let headername = document.querySelector(".popup .close");
+        let ayatcontnieer = document.querySelector(".ayat");
+        let headername = document.querySelector(".popup .close p");
+        
         surahtitle.forEach((title, index)=>{
             title.addEventListener("click",()=>{
                 fetch(`http://api.alquran.cloud/v1/surah/${index + 1}`).then(response => response.json()).then(data => {
@@ -92,14 +93,18 @@ function getsurah(){
                     ayatts.forEach(ayatt=>{
                         popup.classList.add("active");
                         ayatcontnieer.innerHTML += `
-                        <span>${ayatt.text} {${ayatt.numberInSurah}} </span>
-                        `
-                        headername.innerHTML = `
-                        <p>${data.data.name}</p>
-                        <i class="fas fa-times"></i>`
+                        <span>${ayatt.text} {${ayatt.numberInSurah}} </span>`
+                        headername.innerText = `${data.data.name}`;
+
                     })
+
                 })
             })
+        })
+        let closepop = document.querySelector("i.fa-times");
+        closepop.addEventListener("click",()=>{
+            popup.classList.remove("active");
+            console.log(closepop)
         })
     })
 }
