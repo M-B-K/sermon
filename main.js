@@ -32,6 +32,7 @@ function hadithchanger(){
         }
     })
 }
+
 // explore btn
 let exploreBtn = document.querySelector(".title .btn");
 let ahadithsection = document.querySelector(".ahadith");
@@ -40,3 +41,22 @@ ahadithsection.scrollIntoView({
     behavior: "smooth"
 })
 })
+
+
+// header btn
+// let list = document.querySelectorAll(".header .contnieer ul li")
+// for(let i = 0; i<list.length; i++){
+//     list[i].classList.remove("active")
+//     list[i].addEventListener("click",()=>{
+//         list[i].classList.add("active")
+        
+//     })
+// }
+
+// console.log(list)
+// let ahdithBtn = document.querySelector(".title .btn");
+// ahdithBtn.addEventListener('click',()=>{
+// ahadithsection.scrollIntoView({
+//     behavior: "smooth"
+// })
+// })
