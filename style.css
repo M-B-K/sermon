@@ -5,6 +5,10 @@
     font-family: "cairo-bold";
     outline: none;
 }
+*::-webkit-scrollbar{
+    display: none;
+}
+
 body{
     direction: rtl;
     scroll-behavior: smooth;
@@ -269,8 +273,9 @@ section h3:hover::after{
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(150px,auto));
     grid-gap: 20px;
-    padding: 40px 0;
+    padding: 40px 0 0;
 }
+
 .surahcontnieer .surah{
     min-height: 150px;
     min-width: 180px;
@@ -310,8 +315,8 @@ section h3:hover::after{
     background-color: rgb(67, 160, 71);
     color: #fff;
     width: 100%;
-    padding: 26px 20px;
-    height: 40px;
+    padding: 40px 20px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -320,7 +325,7 @@ section h3:hover::after{
 }
 .popup .close i{
     background-color: white;
-    padding: 10px 16px;
+    padding: 12px 16px;
     color: #43a047;
     border-radius: 6px;
     cursor: pointer;
