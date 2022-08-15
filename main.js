@@ -68,7 +68,7 @@ let surahscontnieer = document.querySelector(".surahcontnieer")
 getsurah();
 function getsurah(){
     // https://www.hadithapi.com/docs/hadiths
-    const apiUrl= "http://api.alquran.cloud/v1/meta";
+    const apiUrl= "https://api.alquran.cloud/v1/meta";
     fetch(apiUrl).then(response => response.json()).then(data => {
         let surahs = data.data.surahs.references;
         let count = data.data.surahs.count
@@ -87,15 +87,35 @@ function getsurah(){
         
         surahtitle.forEach((title, index)=>{
             title.addEventListener("click",()=>{
-                fetch(`http://api.alquran.cloud/v1/surah/${index + 1}`).then(response => response.json()).then(data => {
+                fetch(`https://api.alquran.cloud/v1/surah/${index + 1}`).then(response => response.json()).then(data => {
                     ayatcontnieer.innerHTML = "";
                     let ayatts =data.data.ayahs;
+                    let indexe = index;
                     ayatts.forEach(ayatt=>{
                         popup.classList.add("active");
-                        ayatcontnieer.innerHTML += `
-                        <span>${ayatt.text} {${ayatt.numberInSurah}} </span>`
                         headername.innerText = `${data.data.name}`;
+                        if(indexe == 0){
+                            if(ayatt.numberInSurah == 1){
+                                ayatcontnieer.innerHTML += `
+                                <p>${ayatt.text} {${ayatt.numberInSurah }}</p>`
+                            }
+                            else {
+                                ayatcontnieer.innerHTML += `
+                                <span>${ayatt.text} {${ayatt.numberInSurah }} </span>`
+                            }
+                        }
+                        else{
+                            if(ayatt.numberInSurah == 1){
+                                ayatcontnieer.innerHTML += `
+                                <p>${ayatt.text} </p>`
+                            }
+                            else {
+                                ayatcontnieer.innerHTML += `
+                                <span>${ayatt.text} {${ayatt.numberInSurah -1}} </span>`
+                            }
 
+                        }
+                        
                     })
 
                 })
@@ -104,7 +124,6 @@ function getsurah(){
         let closepop = document.querySelector("i.fa-times");
         closepop.addEventListener("click",()=>{
             popup.classList.remove("active");
-            console.log(closepop)
         })
     })
 }

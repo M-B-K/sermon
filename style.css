@@ -248,23 +248,21 @@ section h3:hover::after{
     height: 400px;
     border-radius: 6px;
 }
-@media (max-width:1100px) {
+/* @media (max-width:700px) {
     .lectre .contnieer .col1,
     .lectre .contnieer .col2{
          width: 100%;
-}
-.lectre .contnieer .col1 img{
+    }   
+    .lectre .contnieer .col1 img{
     display: none   ;
-}
-.lectre .contnieer{
+    }
+    .lectre .contnieer{
     flex-direction: column-reverse;
-}
-.lectre .contnieer .col2{
+    }   
+    .lectre .contnieer .col2{
     position: static;
-}
-
-
-}
+    }
+} */
 /* section four */
 .surahcontnieer{
     display: grid;
@@ -330,8 +328,4 @@ section h3:hover::after{
 .popup .ayat{
     padding:20px;
     text-align: center;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center; */
 }
