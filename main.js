@@ -72,7 +72,7 @@ function getsurah(){
     fetch(apiUrl).then(response => response.json()).then(data => {
         let surahs = data.data.surahs.references;
         let count = data.data.surahs.count
-        for (let index = 0; index < count; index++) {
+        for (let index = 0; index < 20; index++) {
             surahscontnieer.innerHTML += `
             <div class="surah">
                 <p>${surahs[index].name}</p>

@@ -191,14 +191,16 @@ section h3:hover::after{
     display: flex;
     justify-content: space-between;
     padding: 2px;
+
 }
 .ahadith .bottun div{
     background-color: #43a047;
     color: white;
     font-size: 20px;
-    padding: 8px;
+    padding: 10px 24px;
     cursor: pointer;
     border-radius: 6px;
+
 }
 .ahadith .bottun div.number{
     background-color: transparent;
@@ -273,15 +275,15 @@ section h3:hover::after{
 /* section four */
 .surahcontnieer{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(150px,auto));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(120px,1fr));
     grid-gap: 20px;
     padding: 40px 0 0;
 }
 
 .surahcontnieer .surah{
-    min-height: 150px;
-    min-width: 180px;
+    min-height: 120px;
+    min-width: 150px;
     box-shadow: 0 0 5px #43a047;
     display: flex;
     flex-direction: column;
@@ -294,7 +296,27 @@ section h3:hover::after{
     transform: scale(0.90);
 }
 
+.quran .bottun{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
 
+}
+.quran .bottun div{
+    background-color: #43a047;
+    color: white;
+    font-size: 20px;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+
+}
+.quran .bottun div.number{
+    background-color: transparent;
+    color: #43a047;
+    font-weight: 700;
+    cursor: default;
+}
 
 
 /* popup */
