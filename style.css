@@ -176,7 +176,7 @@ section h3:hover::after{
 .ahadithcontnieer{
     min-height: 350px;
     position: relative;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px #43a047;
     color: #232323;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -221,7 +221,7 @@ section h3:hover::after{
 }
 
 .lectre .contnieer .col1 .box{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px #43a047;
     margin: 0px 0px 30px ;
     border-radius: 6px;
     cursor: pointer;
@@ -252,7 +252,7 @@ section h3:hover::after{
     height: 400px;
     border-radius: 6px;
 }
-/* @media (max-width:700px) {
+@media (max-width:700px) {
     .lectre .contnieer .col1,
     .lectre .contnieer .col2{
          width: 100%;
@@ -266,7 +266,10 @@ section h3:hover::after{
     .lectre .contnieer .col2{
     position: static;
     }
-} */
+    .lectre .contnieer .col2 iframe{
+        margin-bottom: 20px;
+    }
+}
 /* section four */
 .surahcontnieer{
     display: grid;
@@ -279,7 +282,7 @@ section h3:hover::after{
 .surahcontnieer .surah{
     min-height: 150px;
     min-width: 180px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px #43a047;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -333,4 +336,36 @@ section h3:hover::after{
 .popup .ayat{
     padding:20px;
     text-align: center;
+}
+
+.praycontnieer{
+    padding-top: 40px;
+}
+.praycontnieer .contnieer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 40px;
+}
+
+.praycontnieer div.box{
+    min-width: 200px;
+    min-height: 200px;
+    box-shadow: 0 0 5px #43a047;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s all ease-in-out;
+}
+.praycontnieer div.box:hover{
+    transform: scale(0.90);
+}
+.praycontnieer p{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.praycontnieer p.name{
+    color: #43a047;
 }
