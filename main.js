@@ -6,9 +6,9 @@ window.addEventListener("scroll",()=>{
 
 // hadith api
 let ahadithcontnieer = document.querySelector(".ahadithcontnieer");
-let next = document.querySelector(".bottun .next");
-let prev = document.querySelector(".bottun .prev");
-let number = document.querySelector(".bottun .number");
+let ahadith_next = document.querySelector(".ahadith .bottun .next");
+let ahadith_prev = document.querySelector(".ahadith .bottun .prev");
+let ahadith_number = document.querySelector(".ahadith .bottun .number");
 let hadithindex = 0;
 hadithchanger();
 function hadithchanger(){
@@ -18,17 +18,17 @@ function hadithchanger(){
         let hadiths = data.hadiths.data;
         // console.log(hadiths);
         gethadith();
-        next.addEventListener('click',()=>{
+        ahadith_next.addEventListener('click',()=>{
             hadithindex == 24 ? hadithindex = 0 : hadithindex++;
             gethadith();
         })
-        prev.addEventListener('click',()=>{
+        ahadith_prev.addEventListener('click',()=>{
             hadithindex == 0 ? hadithindex = 24 : hadithindex--;
             gethadith();
         })
         function gethadith(){
             ahadithcontnieer.innerText = hadiths[hadithindex].hadithArabic;
-            number.innerText = `25 / ${hadithindex + 1}`
+            ahadith_number.innerText = `25 / ${hadithindex + 1}`
         }
     })
 }
@@ -71,15 +71,36 @@ function getsurah(){
     const apiUrl= "https://api.alquran.cloud/v1/meta";
     fetch(apiUrl).then(response => response.json()).then(data => {
         let surahs = data.data.surahs.references;
-        let count = data.data.surahs.count
-        for (let index = 0; index < 20; index++) {
-            surahscontnieer.innerHTML += `
-            <div class="surah">
-                <p>${surahs[index].name}</p>
-                <p>${surahs[index].englishName}</p>
-            </div>
-            `;            
+        let quran_next = document.querySelector(".quran .bottun .next");
+        let quran_prev = document.querySelector(".quran .bottun .prev");
+        let quran_number = document.querySelector(".quran .bottun .number");
+        let surahindex = 0;
+        let end, start;
+        getsurah();
+        quran_next.addEventListener('click',()=>{
+            surahindex == 100 ? surahindex += 14 : surahindex == 114 ? surahindex = 0 : surahindex += 20;
+            getsurah();
+        })
+        quran_prev.addEventListener('click',()=>{
+            surahindex == 14 ? surahindex = 0: surahindex == 0? surahindex = 114 : surahindex -= 20;
+            getsurah();
+        })
+        function getsurah(){
+            start =  surahindex == 114 ? start = 0 : start = surahindex;
+            end = (surahindex == 100 ? end = surahindex + 14 : surahindex == 114 ? end = 20 : end = surahindex + 20);
+            quran_number.innerText = `${start} الى ${end}`
+            surahscontnieer.innerHTML = ``
+            for (start; start < end; start++) {
+                surahscontnieer.innerHTML += `
+                <div class="surah">
+                    <p>${surahs[start].name}</p>
+                    <p>${surahs[start].englishName}</p>
+                </div>`;            
+            }
+            
         }
+        
+
         let surahtitle = document.querySelectorAll(".surah");
         let popup = document.querySelector(".popup");
         let ayatcontnieer = document.querySelector(".ayat");
