@@ -458,8 +458,8 @@ footer .txt .soicalicon a i{
     position: fixed;
     bottom: -50px;
     right: -50px;
-    padding: 10px;
-    font-size: 20px;
+    padding: 10px 14px;
+    font-size: 16px;
     background-color: #43a047;
     color: #fafafa;
     border-radius: 6px;

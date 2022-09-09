@@ -13,7 +13,7 @@ nav_icon.addEventListener('click',()=>{
     if(list.classList.contains("active") == true) {
         fixednav.classList.add("active")
     }
-    else if (list.classList.contains("active") == false){
+    else if (list.classList.contains("active") == false && window.scrollY <100){
         fixednav.classList.remove("active")
     }
 })
@@ -173,7 +173,7 @@ function getsurah(){
 let boxs = document.querySelector(".praycontnieer .boxs")
 getpraytime();
 function getpraytime(){
-    fetch(" http://api.aladhan.com/v1/timingsByCity?city=syria&country=aleppo%20Emirates&method=8").then(response => response.json()).then(data =>{
+    fetch(" https://api.aladhan.com/v1/timingsByCity?city=syria&country=aleppo%20Emirates&method=8").then(response => response.json()).then(data =>{
     let timings = data.data.timings
     // boxs.innerHTML = ""
     for(let time in timings){
