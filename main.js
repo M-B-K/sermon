@@ -4,6 +4,14 @@ window.addEventListener("scroll",()=>{
     window.scrollY >100? fixednav.classList.add("active"): fixednav.classList.remove("active");
 })
 
+
+// resp nav
+let list = document.querySelector(".header ul");
+let nav_icon = document.querySelector(".header .bars");
+nav_icon.addEventListener('click',()=>{
+    list.classList.toggle("active");
+})
+
 // hadith api
 let ahadithcontnieer = document.querySelector(".ahadithcontnieer");
 let ahadith_next = document.querySelector(".ahadith .bottun .next");

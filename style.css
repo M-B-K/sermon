@@ -416,3 +416,43 @@ section h3:hover::after{
 .praycontnieer p.name{
     color: #43a047;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px){
+
+    .header ul{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        top: 80px;
+        left: 0;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        width: 100%;
+        transform: translateY(-150%);
+        transition: 0.5s all ease-in-out;
+    }
+    .header ul.active{
+        transform: translateY(0%);
+
+    }
+    .header .bars{
+        display: inline-block;
+        cursor: pointer;
+    }
+    .header .bars i{
+        font-size: 30px;
+    }
+}
