@@ -298,8 +298,7 @@ section h3:hover::after{
 
 .quran .bottun{
     display: flex;
-    justify-content: space-between;
-    padding: 2px;
+    justify-content: space-between; 
     font-size: 12px;
 
 }
@@ -307,7 +306,7 @@ section h3:hover::after{
     background-color: #43a047;
     color: white;
     font-size: 20px;
-    padding: 10px 24px;
+    padding: 10px 10px;
     cursor: pointer;
     border-radius: 6px;
 
@@ -388,9 +387,9 @@ section h3:hover::after{
 .praycontnieer{
     padding-top: 40px;
 }
-.praycontnieer .contnieer{
+.praycontnieer .contnieer .boxs{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 40px;
 }
 
@@ -417,19 +416,66 @@ section h3:hover::after{
     color: #43a047;
 }
 
+.contact-us{
+    padding: 0;
+}
+
+footer{
+    height: 500px;
+    background-image: url(./imag/footer.svg) ;
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
 
 
+footer .txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: #fff;
+    height: 100%;
+    padding-bottom: 20px;
 
+}
 
+footer .logo{
+    font-family: "thuluth-decorated";
+    font-size: 50px;
+    cursor: pointer;
+}
 
+footer .txt .soicalicon a{
+    color: #fff;
+}
 
+footer .txt .soicalicon a i{
+    font-size: 24px;
+    padding: 10px;
+}
 
-
-
-
-
+.up {
+    position: fixed;
+    bottom: -50px;
+    right: -50px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #43a047;
+    color: #fafafa;
+    border-radius: 6px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+    z-index: 9999;
+    box-shadow: 0 0 5px #fff;
+  }
+  
+  .up.show {
+    right: 10px;
+    bottom: 10px;
+  }
+  
 @media (max-width: 900px){
-
     .header ul{
         position: absolute;
         display: flex;

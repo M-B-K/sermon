@@ -168,3 +168,40 @@ function getsurah(){
         }
     })
 }
+
+
+let boxs = document.querySelector(".praycontnieer .boxs")
+getpraytime();
+function getpraytime(){
+    fetch(" http://api.aladhan.com/v1/timingsByCity?city=syria&country=aleppo%20Emirates&method=8").then(response => response.json()).then(data =>{
+    let timings = data.data.timings
+    // boxs.innerHTML = ""
+    for(let time in timings){
+        boxs.innerHTML += `
+            <div class="box">
+                <p class="time">
+                    ${timings[time]}
+                </p>
+                <p class="name">
+                    ${time}
+                </p>
+            </div>`;
+
+    }
+})
+
+}
+
+
+// for up scroll
+let span = document.querySelector(".up");
+window.onscroll = function () {
+    this.scrollY >= 200?span.classList.add("show"):span.classList.remove("show");
+  };
+
+span.onclick = function(){
+    window.scroll({
+        top: 0,
+        behavior: "smooth",
+    })
+}
