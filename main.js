@@ -10,6 +10,12 @@ let list = document.querySelector(".header ul");
 let nav_icon = document.querySelector(".header .bars");
 nav_icon.addEventListener('click',()=>{
     list.classList.toggle("active");
+    if(list.classList.contains("active") == true) {
+        fixednav.classList.add("active")
+    }
+    else if (list.classList.contains("active") == false){
+        fixednav.classList.remove("active")
+    }
 })
 
 // hadith api
