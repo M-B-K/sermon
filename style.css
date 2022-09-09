@@ -276,13 +276,12 @@ section h3:hover::after{
 .surahcontnieer{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(120px,1fr));
     grid-gap: 20px;
     padding: 40px 0 ;
 }
 
 .surahcontnieer .surah{
-    min-height: 120px;
+    min-height: 150px;
     min-width: 150px;
     box-shadow: 0 0 5px #43a047;
     display: flex;
@@ -390,11 +389,11 @@ section h3:hover::after{
 .praycontnieer .contnieer .boxs{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 40px;
+    grid-gap: 20px;
 }
 
 .praycontnieer div.box{
-    min-width: 200px;
+    min-width: 150;
     min-height: 200px;
     box-shadow: 0 0 5px #43a047;
     padding: 20px;
