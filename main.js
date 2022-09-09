@@ -16,7 +16,6 @@ function hadithchanger(){
     const apiUrl= "https://www.hadithapi.com/api/hadiths?apiKey=$2y$10$NnJbDjV2YFeiaii4ORQteezEUzRtLYcXrqedlLgpdhR1s9FKhu";
     fetch(apiUrl).then(response => response.json()).then(data => {
         let hadiths = data.hadiths.data;
-        // console.log(hadiths);
         gethadith();
         ahadith_next.addEventListener('click',()=>{
             hadithindex == 24 ? hadithindex = 0 : hadithindex++;
@@ -76,75 +75,82 @@ function getsurah(){
         let quran_number = document.querySelector(".quran .bottun .number");
         let surahindex = 0;
         let end, start;
+        let surahtitle;
         getsurah();
+
         quran_next.addEventListener('click',()=>{
             surahindex == 100 ? surahindex += 14 : surahindex == 114 ? surahindex = 0 : surahindex += 20;
             getsurah();
+
         })
         quran_prev.addEventListener('click',()=>{
             surahindex == 14 ? surahindex = 0: surahindex == 0? surahindex = 114 : surahindex -= 20;
             getsurah();
+            
         })
         function getsurah(){
             start =  surahindex == 114 ? start = 0 : start = surahindex;
             end = (surahindex == 100 ? end = surahindex + 14 : surahindex == 114 ? end = 20 : end = surahindex + 20);
             quran_number.innerText = `${start} الى ${end}`
             surahscontnieer.innerHTML = ``
+            let x;
+            (end - start) == 14? x = 14: x = 20;
             for (start; start < end; start++) {
                 surahscontnieer.innerHTML += `
                 <div class="surah">
                     <p>${surahs[start].name}</p>
                     <p>${surahs[start].englishName}</p>
-                </div>`;            
+                </div>`;
             }
-            
-        }
-        
-
-        let surahtitle = document.querySelectorAll(".surah");
-        let popup = document.querySelector(".popup");
-        let ayatcontnieer = document.querySelector(".ayat");
-        let headername = document.querySelector(".popup .close p");
-        
-        surahtitle.forEach((title, index)=>{
-            title.addEventListener("click",()=>{
-                fetch(`https://api.alquran.cloud/v1/surah/${index + 1}`).then(response => response.json()).then(data => {
-                    ayatcontnieer.innerHTML = "";
-                    let ayatts =data.data.ayahs;
-                    let indexe = index;
-                    ayatts.forEach(ayatt=>{
-                        popup.classList.add("active");
-                        headername.innerText = `${data.data.name}`;
-                        if(indexe == 0){
-                            if(ayatt.numberInSurah == 1){
-                                ayatcontnieer.innerHTML += `
-                                <p>${ayatt.text} {${ayatt.numberInSurah }}</p>`
+            surahtitle = document.querySelectorAll(".surah");
+            let popup = document.querySelector(".popup");
+            let help = document.querySelector(".help");
+            let ayatcontnieer = document.querySelector(".ayat");
+            let headername = document.querySelector(".popup .close p");
+    
+            surahtitle.forEach((title, index)=>{
+                title.addEventListener("click",()=>{
+                    help.classList.add("active");
+                    fetch(`https://api.alquran.cloud/v1/surah/${index + 1  + end - x }`).then(response => response.json()).then(data => {
+                        ayatcontnieer.innerHTML = "";
+                        let ayatts =data.data.ayahs;
+                        let indexe = index;
+                        ayatts.forEach(ayatt=>{
+                            popup.classList.add("active");
+    
+                            headername.innerText = `${data.data.name}`;
+                            if(indexe == 0){
+                                if(ayatt.numberInSurah == 1){
+                                    ayatcontnieer.innerHTML += `
+                                    <p>${ayatt.text} {${ayatt.numberInSurah }}</p>`
+                                }
+                                else {
+                                    ayatcontnieer.innerHTML += `
+                                    <span>${ayatt.text} {${ayatt.numberInSurah }} </span>`
+                                }
                             }
-                            else {
-                                ayatcontnieer.innerHTML += `
-                                <span>${ayatt.text} {${ayatt.numberInSurah }} </span>`
+                            else{
+                                if(ayatt.numberInSurah == 1){
+                                    ayatcontnieer.innerHTML += `
+                                    <p>${ayatt.text} </p>`
+                                }
+                                else {
+                                    ayatcontnieer.innerHTML += `
+                                    <span>${ayatt.text} {${ayatt.numberInSurah -1}} </span>`
+                                }
+    
                             }
-                        }
-                        else{
-                            if(ayatt.numberInSurah == 1){
-                                ayatcontnieer.innerHTML += `
-                                <p>${ayatt.text} </p>`
-                            }
-                            else {
-                                ayatcontnieer.innerHTML += `
-                                <span>${ayatt.text} {${ayatt.numberInSurah -1}} </span>`
-                            }
-
-                        }
-                        
+                            
+                        })
+    
                     })
-
                 })
+            })      
+            let closepop = document.querySelector("i.fa-times");
+            closepop.addEventListener("click",()=>{
+                popup.classList.remove("active");
+                help.classList.remove("active");
             })
-        })
-        let closepop = document.querySelector("i.fa-times");
-        closepop.addEventListener("click",()=>{
-            popup.classList.remove("active");
-        })
+        }
     })
 }
