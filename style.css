@@ -181,11 +181,13 @@ section h3:hover::after{
     margin-top: 40px;
     margin-bottom: 20px;
     color: #000;
-    text-align: center;
+    text-align: justify;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
+    /* font-family: "thuluth-decorated"; */
+
 }
 .ahadith .bottun{
     display: flex;
@@ -327,6 +329,8 @@ section h3:hover::after{
     overflow-y: scroll;
     transition: 0.5s all ease-in-out;
     transform: translateY(-100%);
+    font-family: "thuluth-decorated";
+
 }
 .help{
     position: fixed;
@@ -380,7 +384,8 @@ section h3:hover::after{
 }
 .popup .ayat{
     padding:20px;
-    text-align: center;
+    text-align: justify;
+
 }
 
 .praycontnieer{

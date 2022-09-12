@@ -137,17 +137,17 @@ function getsurah(){
                             if(indexe == 0){
                                 if(ayatt.numberInSurah == 1){
                                     ayatcontnieer.innerHTML += `
-                                    <p>${ayatt.text} {${ayatt.numberInSurah }}</p>`
+                                    <p style="text-align: center;">${ayatt.text} {${ayatt.numberInSurah }}</p>`
                                 }
                                 else {
                                     ayatcontnieer.innerHTML += `
-                                    <span>${ayatt.text} {${ayatt.numberInSurah }} </span>`
+                                    <span >${ayatt.text} {${ayatt.numberInSurah }} </span>`
                                 }
                             }
                             else{
                                 if(ayatt.numberInSurah == 1){
                                     ayatcontnieer.innerHTML += `
-                                    <p>${ayatt.text} </p>`
+                                    <p style="text-align: center;">${ayatt.text} </p>`
                                 }
                                 else {
                                     ayatcontnieer.innerHTML += `
