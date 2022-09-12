@@ -343,7 +343,7 @@ section h3:hover::after{
     justify-content: center;
     align-items: center;
     transition: 0.5s all ease-in-out;
-
+    text-align: center;
 }
 .help.active{
     top: 50%;
@@ -457,18 +457,15 @@ footer .txt .soicalicon a i{
     position: fixed;
     bottom: -50px;
     right: -50px;
-    padding: 10px 14px;
-    font-size: 16px;
-    background-color: #43a047;
-    color: #fafafa;
-    border-radius: 6px;
-    font-weight: 900;
+    padding: 10px 10px;
     cursor: pointer;
     transition: 0.5s all ease-in-out;
-    z-index: 9999;
-    box-shadow: 0 0 5px #fff;
+    z-index: 1;
   }
-  
+  .up img{
+    width: 40px;
+    height: 40px;
+  }
   .up.show {
     right: 10px;
     bottom: 10px;
@@ -499,5 +496,9 @@ footer .txt .soicalicon a i{
     }
     .header .bars i{
         font-size: 30px;
+    }
+
+    .help{
+        font-size: 16px;
     }
 }
