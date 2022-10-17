@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>الموعظة</title>
-    <!-- Fonts Links Are in Description -->
-    <!-- thuluth decorated Font-->
-    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=thuluth-decorated" />
-    <!-- Cairo Font-->
-    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=cairo-bold" />
-    <!-- Font AWesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-    <!-- Main Style -->
-    <link rel="stylesheet" href="./fonts/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <span class="up">
-    <img src="./imag/circle-up-regular.svg">
-  </span>
-  <header class="header">
-    <div class="contnieer">
-      <div class="logo">الموعظة</div>
-      <ul>
-        <li data-filter="main" class="active">الصفحة الرئيسية</li>
-        <li data-filter="ahadith">أحاديث</li>
-        <li data-filter="lectre">دروس</li>
-        <li data-filter="quran">القرآن الكريم</li>
-        <li data-filter="pray-time">أوقات الصلاة</li>
-        <li data-filter="contact-us">تواصل معنا</li>
-      </ul>
-      <div class="bars">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </header>
+    <!--------------------------------------- thuluth decorated Font --------------------------------------->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.fontstatic.com/f=thuluth-decorated"
+    />
+    <!---------------------------------------        Cairo Font       --------------------------------------->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.fontstatic.com/f=cairo-bold"
+    />
+    <!---------------------------------------        Font AWesome       --------------------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!---------------------------------------        Main Style       --------------------------------------->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <section class="main">
-    <div class="contnieer">
-      <div class="title">
-        <h1>
-          مرحبا بك في 
-          <br>
-          موقع الموعظة الإسلامي
-        </h1>
-        <button class="btn">
-          إبدأ التصفح 
-          <i class="fas fa-caret-left"></i>
-        </button>
-      </div>
-    </div>
-  </section>
+  <body>
+    <!---------------------------------------        UP Button       --------------------------------------->
+    <span class="up">
+      <img src="./imag/circle-up-regular.svg" />
+    </span>
 
-  <section class="ahadith">
+    <!---------------------------------------        Header Section       --------------------------------------->
+    <header class="header">
+      <div class="contnieer">
+        <div class="logo">الموعظة</div>
+        <ul>
+          <li data-filter="main" class="active">الصفحة الرئيسية</li>
+          <li data-filter="ahadith">أحاديث</li>
+          <li data-filter="Lecture">دروس</li>
+          <li data-filter="quran">القرآن الكريم</li>
+          <li data-filter="pray-time">أوقات الصلاة</li>
+          <li data-filter="contact-us">تواصل معنا</li>
+        </ul>
+        <div class="bars">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!---------------------------------------        MAin Section       --------------------------------------->
+    <section class="main">
+      <div class="contnieer">
+        <div class="title">
+          <h1>مرحبا بك في<br />موقع الموعظة الإسلامي</h1>
+          <button class="btn">
+            <span>إبدأ التصفح</span>
+            <i class="fas fa-caret-left"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!---------------------------------------        Ahadith Section       --------------------------------------->
+    <section class="ahadith">
       <h3>أحاديث</h3>
       <div class="contnieer">
         <div class="ahadithcontnieer"></div>
@@ -64,99 +74,130 @@
           <div class="next">التالي</div>
         </div>
       </div>
-  </section>
+    </section>
 
-  <section class="lectre">
-    <h3>دروس</h3>
-    <div class="contnieer">
-      <div class="col1">
-        <div class="box">
-          <div class="text"><h4>{فقه العبادات} باب أحكام الوضوء (1) فضيلة الشيخ فتحي احمد صافي رحمه الله تعالى <br> {5/1/2018}.</h4></div>
-          <img src="./imag/hqdefault.png" alt="">
-        </div>
-        <div class="box">
-          <div class="text"><h4>{فقه العبادات} اب أحكام الوضوء (2) فضيلة الشيخ فتحي احمد صافي رحمه الله تعالى <br> {12/1/2018}.</h4></div>
-          <img src="./imag/hqdefault.png" alt="">
-        </div>
-        <div class="box">
-          <div class="text"><h4> {فقه العبادات} باب أحكام الوضوء (3) فضيلة الشيخ فتحي احمد صافي رحمه الله تعالى <br> {19/1/2018}</h4></div>
-          <img src="./imag/hqdefault.png" alt="">
-        </div>
-        <div class="box">
-          <div class="text"><h4>{فقه العبادات} باب أحكام الوضوء (4) فضيلة الشيخ فتحي احمد صافي رحمه الله تعالى <br> {26/1/2018}</h4></div>
-          <img src="./imag/hqdefault.png" alt="">
-        </div>
-        <div class="box">
-          <div class="text"><h4>{فقه العبادات} باب أحكام الوضوء (5) فضيلة الشيخ فتحي احمد صافي رحمه الله تعالى<br> {2/2/2018}</h4></div>
-          <img src="./imag/hqdefault.png" alt="">
-        </div>        
-      </div>
-      <div class="col2">
-        <iframe src="https://www.youtube.com/embed/watch?v=8eMIdamgBVU&list=PLb6ujAovsJRqJfGkcT1o6VXa5G9MRMDnn&index=1&t=5s" frameborder="0"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="quran">
-    <h3>القرآن الكريم</h3>
-    <div class="contnieer">
-      <div class="surahcontnieer"></div>
-      <div class="bottun">
-        <div class="prev">السابق</div>
-        <div class="number"></div>
-        <div class="next">التالي</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="help">
-    <p>يستغرق هذا بعض الوقت, الرجاء الانتظار....</p>
-  </div>
-
-
-  <div class="popup">
-    <div class="close">
-      <p></p>
-      <i class="fas fa-times"></i>
-    </div>
-
-    <div class="ayat">
-    </div>
-  </div>
-
-
-
-  <section class="pray-time">
-    <h3>أوقات الصلاة</h3>
-    <div class="praycontnieer">
+    <!---------------------------------------        Lecture Section       --------------------------------------->
+    <section class="Lecture">
+      <h3>دروس</h3>
       <div class="contnieer">
-        <div class="boxs">
-
+        <div class="col1">
+          <div class="box">
+            <div class="text">
+              <h4>
+                {فقه العبادات} باب أحكام الوضوء (1) فضيلة الشيخ فتحي احمد صافي
+                رحمه الله تعالى <br />
+                {5/1/2018}.
+              </h4>
+            </div>
+            <img src="./imag/hqdefault.png" alt="" />
+          </div>
+          <div class="box">
+            <div class="text">
+              <h4>
+                {فقه العبادات} اب أحكام الوضوء (2) فضيلة الشيخ فتحي احمد صافي
+                رحمه الله تعالى <br />
+                {12/1/2018}.
+              </h4>
+            </div>
+            <img src="./imag/hqdefault.png" alt="" />
+          </div>
+          <div class="box">
+            <div class="text">
+              <h4>
+                {فقه العبادات} باب أحكام الوضوء (3) فضيلة الشيخ فتحي احمد صافي
+                رحمه الله تعالى <br />
+                {19/1/2018}
+              </h4>
+            </div>
+            <img src="./imag/hqdefault.png" alt="" />
+          </div>
+          <div class="box">
+            <div class="text">
+              <h4>
+                {فقه العبادات} باب أحكام الوضوء (4) فضيلة الشيخ فتحي احمد صافي
+                رحمه الله تعالى <br />
+                {26/1/2018}
+              </h4>
+            </div>
+            <img src="./imag/hqdefault.png" alt="" />
+          </div>
+          <div class="box">
+            <div class="text">
+              <h4>
+                {فقه العبادات} باب أحكام الوضوء (5) فضيلة الشيخ فتحي احمد صافي
+                رحمه الله تعالى<br />
+                {2/2/2018}
+              </h4>
+            </div>
+            <img src="./imag/hqdefault.png" alt="" />
+          </div>
+        </div>
+        <div class="col2">
+          <iframe
+            src="https://www.youtube.com/embed/watch?v=8eMIdamgBVU&list=PLb6ujAovsJRqJfGkcT1o6VXa5G9MRMDnn&index=1&t=5s"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-<section class="contact-us">
-  <footer>
-    <div class="txt">
-      <div class="logo">الموعظة</div>
-      <div class="soicalicon">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-  
-        <a href="#"><i class="fab fa-twitter"></i></a>
-  
-        <a href="#"><i class="fab fa-telegram"></i></a>
-  
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-  
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <!---------------------------------------        Quran Section       --------------------------------------->
+    <section class="quran">
+      <h3>القرآن الكريم</h3>
+      <div class="contnieer">
+        <div class="surahcontnieer"></div>
+        <div class="bottun">
+          <div class="prev">السابق</div>
+          <div class="number"></div>
+          <div class="next">التالي</div>
+        </div>
       </div>
-      <p>جميع حقوق النشر محفوظة 2022 ©</p>
-    </div>
-  </footer>
-</section>
+    </section>
 
+    <div class="help">
+      <p>يستغرق هذا بعض الوقت, الرجاء الانتظار....</p>
+    </div>
+
+    <div class="popup">
+      <div class="close">
+        <p></p>
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="ayat"></div>
+    </div>
+
+    <!----------------------------------------- Prayer-Time Section ------------------------------------------>
+    <section class="pray-time">
+      <h3>أوقات الصلاة</h3>
+      <div class="praycontnieer">
+        <div class="contnieer">
+          <div class="boxs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!---------------------------------------        prayer time       --------------------------------------->
+    <section class="contact-us">
+      <footer>
+        <div class="txt">
+          <div class="logo">الموعظة</div>
+          <div class="soicalicon">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+
+            <a href="#"><i class="fab fa-twitter"></i></a>
+
+            <a href="#"><i class="fab fa-telegram"></i></a>
+
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p>جميع حقوق النشر محفوظة 2022 ©</p>
+        </div>
+      </footer>
+    </section>
+
+    <!---------------------------------------        Main JavaScript       --------------------------------------->
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>

@@ -1,509 +1,563 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "cairo-bold";
-    outline: none;
-}
-*::-webkit-scrollbar{
-    display: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "cairo-bold";
+  outline: none;
 }
 
-body{
-    direction: rtl;
-    scroll-behavior: smooth;
-}
-ul li{
-    list-style: none;
-}
-.contnieer{
-    max-width: 1450px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    padding: 0 20px;
+*::-webkit-scrollbar {
+  display: none;
 }
 
-/* section style */
-section{
-    padding: 80px 0 ;
+body {
+  direction: rtl;
+  scroll-behavior: smooth;
 }
-section h3{
-    font-size: 30px;
-    text-align: center;
-    color: #43a047;
-    position: relative;
 
+ul li {
+  list-style: none;
 }
+
+.contnieer {
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+/*************************************************** Up Button style ****************************************************/
+.up {
+  position: fixed;
+  bottom: -50px;
+  left: -50px;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+  z-index: 1;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+}
+.up img {
+  width: 30px;
+  height: 30px;
+}
+.up.show {
+  left: 10px;
+  bottom: 10px;
+}
+
+/*************************************************** section style ****************************************************/
+section {
+  padding: 80px 0;
+}
+
+section h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #43a047;
+  position: relative;
+}
+
 section h3::before,
-section h3::after{
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 100px;
-    height: 2px;
-    background-color: #43a047;
-    transition: 0.5s all ease-in-out;
-}
-section h3::after{
-    width: 50px;
-    bottom: -12px;
-}
-section h3:hover::before{
-    width: 50px;
-}
-section h3:hover::after{
-    width: 0px;
+section h3::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 100px;
+  height: 2px;
+  background-color: #43a047;
+  transition: 0.5s all ease-in-out;
 }
 
-/* header style*/
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    transition: 0.5s all ease-in-out;
-    z-index: 1;
+section h3::after {
+  width: 50px;
+  bottom: -12px;
 }
-.header .contnieer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    transition: 0.5s all ease-in-out;
-    color: white;
+
+section h3:hover::before {
+  width: 50px;
 }
-.header.active{
-    background-color: rgba(0, 0, 0, 0.6);
+
+section h3:hover::after {
+  width: 0px;
 }
-.header.active .contnieer{
-    height: 80px;
+
+/*************************************************** header style ****************************************************/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s all ease-in-out;
+  z-index: 1;
 }
-.header .logo{
-    font-family: "thuluth-decorated";
-    font-size: 50px;
-    cursor: pointer;
+
+.header .contnieer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  transition: 0.5s all ease-in-out;
+  color: white;
 }
-.header ul{
-    display: flex;
+
+.header.active {
+  background-color: rgba(0, 0, 0, 0.6);
 }
-.header ul li{
-    position: relative;
-    cursor: pointer;
+
+.header.active .contnieer {
+  height: 80px;
 }
-.header ul li:after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background-color: white;
-    transition: 0.5s all ease-in-out;
+
+.header .logo {
+  font-family: "thuluth-decorated";
+  font-size: 50px;
+  cursor: pointer;
 }
+
+.header ul {
+  display: flex;
+}
+
+.header ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+.header ul li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: 0.5s all ease-in-out;
+}
+
 .header ul li:hover:after,
-.header ul li.active:after{
-    width: 100%;
-
+.header ul li.active:after {
+  width: 100%;
 }
+
 .header li:not(:last-of-type),
-.header li:not(:first-of-type){
-    margin: 0px 14px;
-}
-.header .bars{
-    display: none;
+.header li:not(:first-of-type) {
+  margin: 0px 14px;
 }
 
-/* main section */
-.main{
-    padding: 0;
-    background: url(./imag/1.jpg) center center/cover no-repeat;
+.header .bars {
+  display: none;
 }
-.main .contnieer{
-    min-height: 100vh;
-}
-.main .contnieer .title{
+
+@media (max-width: 992px) {
+  .header ul {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-}
-.main .title h1{
-    line-height: 1.9;
-    font-size: 40px;
-    margin-bottom: 30px;
-}
-.main .title .btn{
-    outline: none;
-    border: 2px solid white;
-    background-color: transparent;
-    border-radius: 6px;
-    font-size: 20px;
-    color: white;
-    padding: 6px 14px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    transition: 0.5s all ease-in-out;
-}
-.main .title .btn i{
-    font-size: 25px;
-    margin-right: 16px;
-}
-.title .btn::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0%;
-    height: 100%;
-    transition: 0.5s all ease-in-out;
-    z-index: -1;
-    background-color: white;
-}
-.title .btn:hover{
-    color: #000;
-}
-.title .btn:hover::after{
-    width: 100%;
-}
-
-/* SECTION TWO */
-.ahadithcontnieer{
-    min-height: 350px;
-    position: relative;
-    box-shadow: 0 0 5px #43a047;
-    color: #232323;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #000;
-    text-align: justify;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-    /* font-family: "thuluth-decorated"; */
-
-}
-.ahadith .bottun{
-    display: flex;
-    justify-content: space-between;
-    padding: 2px;
-
-}
-.ahadith .bottun div{
-    background-color: #43a047;
-    color: white;
-    font-size: 20px;
-    padding: 10px 24px;
-    cursor: pointer;
-    border-radius: 6px;
-
-}
-.ahadith .bottun div.number{
-    background-color: transparent;
-    color: #43a047;
-    font-weight: 700;
-    cursor: default;
-}
-
-/* SECTION THREE */
-.lectre .contnieer{
-    padding: 50px 20px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.lectre .contnieer .col1,
-.lectre .contnieer .col2{
-    width: 47%;
-}
-
-.lectre .contnieer .col1 .box{
-    box-shadow: 0 0 5px #43a047;
-    margin: 0px 0px 30px ;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.5s all ease-in-out;
-}
-.lectre .contnieer .col1 .box:last-of-type{
-    margin: 0;
-}
-.lectre .contnieer .col1 .box:hover{
-    transform: scale(0.90);
-}
-.lectre .contnieer .col1 img{
-    border-radius: 6px 0px 0px 6px;
-    height: 150px;
-}
-.lectre .contnieer .col1 .text{
-    margin: 10px;
-}
-.lectre .contnieer .col2{
-    position: sticky;
-    top: 80px;
-}
-.lectre .contnieer .col2 iframe{
-    width: 100%;
-    height: 400px;
-    border-radius: 6px;
-}
-@media (max-width:700px) {
-    .lectre .contnieer .col1,
-    .lectre .contnieer .col2{
-         width: 100%;
-    }   
-    .lectre .contnieer .col1 img{
-    display: none   ;
-    }
-    .lectre .contnieer{
-    flex-direction: column-reverse;
-    }   
-    .lectre .contnieer .col2{
-    position: static;
-    }
-    .lectre .contnieer .col2 iframe{
-        margin-bottom: 20px;
-    }
-}
-/* section four */
-.surahcontnieer{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 20px;
-    padding: 40px 0 ;
-}
-
-.surahcontnieer .surah{
-    min-height: 150px;
-    min-width: 150px;
-    box-shadow: 0 0 5px #43a047;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.5s all ease-in-out;
-}
-.surahcontnieer .surah:hover{
-    transform: scale(0.90);
-}
-
-.quran .bottun{
-    display: flex;
-    justify-content: space-between; 
-    font-size: 12px;
-
-}
-.quran .bottun div{
-    background-color: #43a047;
-    color: white;
-    font-size: 20px;
-    padding: 10px 10px;
-    cursor: pointer;
-    border-radius: 6px;
-
-}
-.quran .bottun div.number{
-    background-color: transparent;
-    color: #43a047;
-    font-weight: 700;
-    cursor: default;
-}
-
-
-/* popup */
-.popup{
-    position: fixed;
-    inset: 0;
-    z-index: 3;
-    background-color: white;
-    overflow-y: scroll;
-    transition: 0.5s all ease-in-out;
-    transform: translateY(-100%);
-    font-family: "thuluth-decorated";
-
-}
-.help{
-    position: fixed;
-    top: -100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    background-color: #fff;
-    color: #43a047;
-    font-size: 22px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s all ease-in-out;
-    text-align: center;
-}
-.help.active{
-    top: 50%;
-}
-
-.popup.active{
-    transform: translateY(0);
-}
-
-.popup::-webkit-scrollbar{
-    display: none;
-}
-
-.popup .close{
-    background-color: rgb(67, 160, 71);
-    color: #fff;
-    width: 100%;
-    padding: 40px 20px;
-    position: sticky;
-    top: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 24px;
-
-}
-.popup .close i{
-    background-color: white;
-    padding: 12px 16px;
-    color: #43a047;
-    border-radius: 6px;
-    cursor: pointer;
-}
-.popup .ayat{
-    padding:20px;
-    text-align: justify;
-
-}
-
-.praycontnieer{
-    padding-top: 40px;
-}
-.praycontnieer .contnieer .boxs{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 20px;
-}
-
-.praycontnieer div.box{
-    min-width: 150;
-    min-height: 200px;
-    box-shadow: 0 0 5px #43a047;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    top: 80px;
+    left: 0;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 100%;
+    transform: translateY(-150%);
     transition: 0.5s all ease-in-out;
-}
-.praycontnieer div.box:hover{
-    transform: scale(0.90);
-}
-.praycontnieer p{
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.praycontnieer p.name{
-    color: #43a047;
-}
-
-.contact-us{
-    padding: 0;
-}
-
-footer{
-    height: 500px;
-    background-image: url(./imag/footer.svg) ;
-    background-repeat: no-repeat;
-    background-size: cover;    
-}
-
-
-footer .txt{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    color: #fff;
-    height: 100%;
-    padding-bottom: 20px;
-
-}
-
-footer .logo{
-    font-family: "thuluth-decorated";
-    font-size: 50px;
+  }
+  .header ul.active {
+    transform: translateY(0%);
+  }
+  .header .bars {
+    display: inline-block;
     cursor: pointer;
+  }
+  .header .bars i {
+    font-size: 30px;
+  }
+}
+/*************************************************** main section ****************************************************/
+.main {
+  padding: 0;
+  background: url(./imag/1.jpg) center center/cover no-repeat;
 }
 
-footer .txt .soicalicon a{
-    color: #fff;
+.main .contnieer {
+  min-height: 100vh;
 }
 
-footer .txt .soicalicon a i{
-    font-size: 24px;
-    padding: 10px;
+.main .contnieer .title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
 }
 
-.up {
-    position: fixed;
-    bottom: -50px;
-    right: -50px;
-    padding: 10px 10px;
-    cursor: pointer;
-    transition: 0.5s all ease-in-out;
-    z-index: 1;
-  }
-  .up img{
-    width: 40px;
-    height: 40px;
-  }
-  .up.show {
-    right: 10px;
-    bottom: 10px;
-  }
-  
-@media (max-width: 900px){
-    .header ul{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        top: 80px;
-        left: 0;
-        height: 300px;
-        background-color: rgba(0, 0, 0, 0.6);
-        text-align: center;
-        width: 100%;
-        transform: translateY(-150%);
-        transition: 0.5s all ease-in-out;
-    }
-    .header ul.active{
-        transform: translateY(0%);
+.main .title h1 {
+  line-height: 1.9;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
 
-    }
-    .header .bars{
-        display: inline-block;
-        cursor: pointer;
-    }
-    .header .bars i{
-        font-size: 30px;
-    }
+.main .title .btn {
+  outline: none;
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 6px;
+  font-size: 20px;
+  color: white;
+  padding: 6px 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.5s all ease-in-out;
+}
 
-    .help{
-        font-size: 16px;
-    }
+.main .title .btn i {
+  font-size: 25px;
+  margin-right: 16px;
+}
+
+.title .btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  transition: 0.5s all ease-in-out;
+  z-index: -1;
+  background-color: white;
+}
+
+.title .btn:hover {
+  color: #000;
+}
+
+.title .btn:hover::after {
+  width: 100%;
+}
+/*************************************************** ahadith section ****************************************************/
+.ahadithcontnieer {
+  min-height: 350px;
+  position: relative;
+  box-shadow: 0 0 5px #43a047;
+  color: #232323;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.ahadith .bottun {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.ahadith .bottun div {
+  background-color: #43a047;
+  color: white;
+  font-size: 20px;
+  padding: 10px 24px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.ahadith .bottun div.number {
+  background-color: transparent;
+  color: #43a047;
+  font-weight: 700;
+  cursor: default;
+}
+
+@media (max-width: 767px) {
+  .ahadith .bottun div {
+    font-size: 16px;
+  }
+}
+
+/*************************************************** Lecture section ****************************************************/
+.Lecture .contnieer {
+  padding: 50px 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.Lecture .contnieer .col1,
+.Lecture .contnieer .col2 {
+  width: 47%;
+}
+
+.Lecture .contnieer .col1 .box {
+  box-shadow: 0 0 5px #43a047;
+  margin: 0px 0px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+}
+
+.Lecture .contnieer .col1 .box:last-of-type {
+  margin: 0;
+}
+
+.Lecture .contnieer .col1 .box:hover {
+  transform: scale(0.9);
+}
+
+.Lecture .contnieer .col1 img {
+  border-radius: 6px 0px 0px 6px;
+  height: 150px;
+}
+
+.Lecture .contnieer .col1 .text {
+  margin: 10px;
+}
+
+.Lecture .contnieer .col2 {
+  position: sticky;
+  top: 80px;
+}
+
+.Lecture .contnieer .col2 iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+  .Lecture .contnieer .col1,
+  .Lecture .contnieer .col2 {
+    width: 100%;
+  }
+  .Lecture .contnieer .col1 img {
+    display: none;
+  }
+  .Lecture .contnieer {
+    flex-direction: column-reverse;
+  }
+  .Lecture .contnieer .col2 {
+    position: static;
+  }
+  .Lecture .contnieer .col2 iframe {
+    margin-bottom: 20px;
+  }
+}
+
+/*************************************************** Quran section ****************************************************/
+.surahcontnieer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 20px;
+  padding: 40px 0;
+}
+
+.surahcontnieer .surah {
+  min-height: 150px;
+  min-width: 150px;
+  box-shadow: 0 0 5px #43a047;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.surahcontnieer .surah:hover {
+  transform: scale(0.9);
+}
+
+.quran .bottun {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.quran .bottun div {
+  background-color: #43a047;
+  color: white;
+  font-size: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.quran .bottun div.number {
+  background-color: transparent;
+  color: #43a047;
+  font-weight: 700;
+  cursor: default;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  background-color: white;
+  overflow-y: scroll;
+  transition: 0.5s all ease-in-out;
+  transform: translateY(-100%);
+  font-family: "thuluth-decorated";
+  font-size: 22px;
+  line-height: 46px;
+}
+
+.help {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #fff;
+  color: #43a047;
+  font-size: 22px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+  text-align: center;
+}
+
+.help.active {
+  top: 50%;
+}
+
+.popup.active {
+  transform: translateY(0);
+}
+
+.popup::-webkit-scrollbar {
+  display: none;
+}
+
+.popup .close {
+  background-color: rgb(67, 160, 71);
+  color: #fff;
+  width: 100%;
+  padding: 40px 20px;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.popup .close i {
+  background-color: white;
+  padding: 12px 16px;
+  color: #43a047;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup .ayat {
+  padding: 20px;
+  text-align: justify;
+}
+
+@media (max-width: 767px) {
+  .quran .bottun div {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .help {
+    font-size: 16px;
+  }
+}
+
+/*************************************************** Prayer-Time section ****************************************************/
+.praycontnieer {
+  padding-top: 40px;
+}
+
+.praycontnieer .contnieer .boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 20px;
+}
+
+.praycontnieer div.box {
+  min-width: 150;
+  min-height: 200px;
+  box-shadow: 0 0 5px #43a047;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+}
+
+.praycontnieer div.box:hover {
+  transform: scale(0.9);
+}
+
+.praycontnieer p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.praycontnieer p.name {
+  color: #43a047;
+}
+
+/*************************************************** footer section ****************************************************/
+.contact-us {
+  padding: 0;
+}
+
+footer {
+  height: 500px;
+  background-image: url(./imag/footer.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer .txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+footer .logo {
+  font-family: "thuluth-decorated";
+  font-size: 50px;
+  cursor: pointer;
+}
+
+footer .txt .soicalicon a {
+  color: #fff;
+}
+
+footer .txt .soicalicon a i {
+  font-size: 24px;
+  padding: 10px;
 }
