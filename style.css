@@ -51,6 +51,18 @@ ul li {
   bottom: 10px;
 }
 
+/*************************************************** Page Loader ****************************************************/
+#pageLoader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #f5f5f5
+    url(imag/The-Best-50-Website-Preloaders-Around-the-Web-Example-26.gif)
+    no-repeat center center;
+  background-size: 50%;
+}
+
 /*************************************************** section style ****************************************************/
 section {
   padding: 80px 0;

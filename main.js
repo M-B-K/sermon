@@ -224,3 +224,9 @@ function getpraytime() {
       }
     });
 }
+
+// Page Loader
+let loader = document.getElementById("pageLoader");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});
