@@ -225,8 +225,8 @@ function getpraytime() {
     });
 }
 
-// Page Loader
-let loader = document.getElementById("pageLoader");
+/*************************************************** Page Loader ****************************************************/
+let loader = document.getElementById("preLoader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
 });
